@@ -10,8 +10,14 @@ int main(){
     printf("Please input a pair of connected number\n");
     while (scanf("%d %d", &p,&q) ==2)
     {
-        for ( i = p; i !=id[i]; i=id[i]);
-        for ( j = q; j !=id[j]; j=id[j]);
+        for ( i = p; i != id[i]; i=id[i])
+        {
+           int t =i;i=id[id[t]];id[t]  = i;
+        }
+        for ( j = q; j !=id[j]; j=id[j])
+        {
+            int t  =j;j=id[id[t]];id[t]  =j;
+        }
         if(i==j){continue;}
         if (sz[i]<sz[j])
         {
